@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红古二手房网-本地真实房源与买卖指南</title>
+    <meta name="description" content="红古二手房网提供海量的红古区二手房房源信息，包括房屋出售、出租、小区详情、房价走势及购房指南。致力于为红古本地居民提供真实、便捷的房产交易服务。">
+    <meta name="keywords" content="红古二手房网,红古二手房,红古房产,红古买房,红古租房,红古房价">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c7be5;
+            --secondary-color: #0056b3;
+            --accent-color: #f6c343;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --white: #ffffff;
+            --radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: var(--white);
+            color: var(--text-dark);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            font-weight: normal;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background-color: #f1f5f9;
+            font-size: 0.85rem;
+            padding: 8px 0;
+            color: var(--text-gray);
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 40px;
+            display: flex;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid var(--primary-color);
+            border-right: none;
+            border-radius: var(--radius) 0 0 var(--radius);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-btn {
+            padding: 0 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .filter-group {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .filter-group h4 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .filter-list li {
+            margin-bottom: 10px;
+        }
+
+        .filter-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .filter-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .price-range {
+            margin-top: 10px;
+        }
+
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* Content Area */
+        .house-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .house-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .house-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #e2e8f0;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.6);
+            color: var(--white);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .tag.hot {
+            background: #ef4444;
+        }
+
+        .card-body {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-price {
+            color: #e63946;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card-price span {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            font-weight: 400;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-info {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: var(--white);
+            padding: 40px 0;
+            margin-bottom: 60px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .guide-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .guide-icon {
+            width: 60px;
+            height: 60px;
+            background: #e0f2fe;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+        }
+
+        .guide-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .guide-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: var(--white);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-gray);
+            display: none;
+            border-top: 1px solid var(--border-color);
+            margin-top: 10px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+                display: none; /* Simplify for mobile */
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header-main .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin: 0;
+            }
+
+            .nav-menu {
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <span>欢迎来到红古二手房网</span>
+                <span>24小时服务热线：0931-1234567</span>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="#" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    红古<span>二手房网</span>
+                </a>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="搜索小区、地址或房源标签...">
+                    <button class="search-btn">搜索</button>
+                </div>
+                <nav class="nav-menu">
+                    <a href="#" class="active">首页</a>
+                    <a href="#">出售房源</a>
+                    <a href="#">出租房源</a>
+                    <a href="#">小区详情</a>
+                    <a href="#">买房资讯</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>红古优质房源，一站式房产服务平台</h1>
+            <p>连接红古区千余套真实在售房源，让您买房更放心，租房更省心。</p>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>1,248</h3>
+                    <p>在售房源</p>
+                </div>
+                <div class="stat-item">
+                    <h3>86</h3>
+                    <p>热门小区</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3.2万</h3>
+                    <p>累计访问</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>真房源认证</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container main-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="filter-group">
+                <h4>区域筛选</h4>
+                <ul class="filter-list">
+                    <li><a href="#">红古区 <span>32%</span></a></li>
+                    <li><a href="#">窑街街道 <span>15%</span></a></li>
+                    <li><a href="#">海石湾镇 <span>28%</span></a></li>
+                    <li><a href="#">平安镇 <span>12%</span></a></li>
+                    <li><a href="#">华龙区 <span>13%</span></a></li>
+                </ul>
+            </div>
+
+            <div class="filter-group">
+                <h4>价格区间</h4>
+                <div class="price-range">
+                    <label><input type="checkbox"> 50万以下</label>
+                    <label><input type="checkbox"> 50-80万</label>
+                    <label><input type="checkbox"> 80-120万</label>
+                    <label><input type="checkbox"> 120万以上</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>户型选择</h4>
+                <ul class="filter-list">
+                    <li><a href="#">一室一厅</a></li>
+                    <li><a href="#">两室一厅</a></li>
+                    <li><a href="#">三室两厅</a></li>
+                    <li><a href="#">四室及以上</a></li>
+                </ul>
+            </div>
+            
+            <div class="filter-group">
+                <h4>房屋类型</h4>
+                <ul class="filter-list">
+                    <li><a href="#">普通住宅</a></li>
+                    <li><a href="#">公寓</a></li>
+                    <li><a href="#">别墅</a></li>
+                    <li><a href="#">商铺</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <section class="content-section">
+                <div class="section-title">
+                    <h2>最新上架房源</h2>
+                    <a href="#">查看更多 <i>&rarr;</i></a>
+                </div>
+                
+                <div class="house-grid">
+                    <!-- House Card 1 -->
+                    <article class="house-card">
+                        <div class="card-img">
+                            <span class="tag hot">急售</span>
+                            <img src="https://picsum.photos/seed/house1/400/300" alt="红古区海石湾小区房源">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-price">85万 <span>/ 平方米</span></div>
+                            <h3 class="card-title">海石湾镇阳光小区 2室1厅 89平米 精装修</h3>
+                            <div class="card-info">
+                                <span>南北通透</span>
+                                <span>近地铁</span>
+                                <span>满五唯一</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- House Card 2 -->
+                    <article class="house-card">
+                        <div class="card-img">
+                            <span class="tag">个人房源</span>
+                            <img src="https://picsum.photos/seed/house2/400/300" alt="红古区平安小区房源">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-price">120万 <span>/ 平方米</span></div>
+                            <h3 class="card-title">平安镇幸福家园 3室2厅 128平米 中楼层</h3>
+                            <div class="card-info">
+                                <span>采光好</span>
+                                <span>急租</span>
+                                <span>随时看房</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- House Card 3 -->
+                    <article class="house-card">
+                        <div class="card-img">
+                            <span class="tag">推荐</span>
+                            <img src="https://picsum.photos/seed/house3/400/300" alt="红古区窑街房源">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-price">45万 <span>/ 平方米</span></div>
+                            <h3 class="card-title">窑街街道老城区 1室1厅 55平米 简单装修</h3>
+                            <div class="card-info">
+                                <span>总价低</span>
+                                <span>拎包入住</span>
+                                <span>学区房</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- House Card 4 -->
+                    <article class="house-card">
+                        <div class="card-img">
+                            <span class="tag">新房</span>
+                            <img src="https://picsum.photos/seed/house4/400/300" alt="红古区新区房源">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-price">165万 <span>/ 平方米</span></div>
+                            <h3 class="card-title">红古新区锦绣花园 4室2厅 150平米 大平层</h3>
+                            <div class="card-info">
+                                <span>高层景观</span>
+                                <span>精装</span>
+                                <span>稀缺房源</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- House Card 5 -->
+                    <article class="house-card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/house5/400/300" alt="红古区出租房源">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-price">1500 <span>/ 月</span></div>
+                            <h3 class="card-title">红古区中心地段 2室1厅 出租 中等装修</h3>
+                            <div class="card-info">
+                                <span>家电齐全</span>
+                                <span>近商圈</span>
+                                <span>可短租</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- House Card 6 -->
+                    <article class="house-card">
+                        <div class="card-img">
+                            <span class="tag">特价</span>
+                            <img src="https://picsum.photos/seed/house6/400/300" alt="红古区商铺房源">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-price">320万 <span>/ 平方米</span></div>
+                            <h3 class="card-title">海石湾商业街 临街商铺 出租/转让</h3>
+                            <div class="card-info">
+                                <span>人流量大</span>
+                                <span>旺铺转让</span>
+                                <span>适合餐饮</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn btn-outline">加载更多房源</button>
+                </div>
+            </section>
+
+            <!-- Guide Section -->
+            <section class="guide-section">
+                <div class="section-title">
+                    <h2>红古购房指南</h2>
+                </div>
+                <div class="guide-grid">
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
+                        <h3>如何辨别真房源</h3>
+                        <p>查看房源证照、核实业主身份及房产证信息，避免遭遇虚假中介诈骗。</p>
+                    </div>
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <h3>红古区房价走势</h3>
+                        <p>了解红古区近期土地市场动态及成交数据，把握最佳购房时机。</p>
+                    </div>
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <h3>购房流程详解</h3>
+                        <p>从看房、签约、过户到交房，提供全流程注意事项及法律风险提示。</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section container">
+        <div class="section-title">
+            <h2>常见问题解答</h2>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">在红古买房需要准备哪些证件？ <span>+</span></div>
+            <div class="faq-answer">
+                购买红古区二手房，买方通常需要携带身份证、户口本、婚姻证明（结婚证或单身证明）。如果是外地户口，可能还需要提供在兰州缴纳社保或纳税的证明。卖方需提供房产证原件、身份证及配偶同意出售的证明。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">红古区的学区房划分是怎样的？ <span>+</span></div>
+            <div class="faq-answer">
+                红古区的学区划分随每年教育局政策调整，建议您在购房前拨打红古区教育局电话或咨询当地学校，确认意向小区对应的小学或初中学区。本站提供的房源信息仅供参考，具体学区以当年教育部门公示为准。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">二手房交易税费如何计算？ <span>+</span></div>
+            <div class="faq-answer">
+                二手房税费主要包括契税、个人所得税、增值税及附加。具体金额取决于房屋面积、房龄、是否满五年唯一等因素。例如，90平米以下首套房通常缴纳1%的契税，二套房缴纳1%-2%。建议在交易前咨询专业房产中介或税务部门。
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>红古二手房网</h2>
+                    <p>专注红古区房产信息服务，致力于为本地居民提供真实、透明、高效的二手房交易与租赁平台。我们相信，好房子，就在身边。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">出售房源</a></li>
+                        <li><a href="#">出租房源</a></li>
+                        <li><a href="#">小区查询</a></li>
+                        <li><a href="#">房价走势</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>购房指南</h4>
+                    <ul>
+                        <li><a href="#">买房流程</a></li>
+                        <li><a href="#">贷款计算器</a></li>
+                        <li><a href="#">税费计算</a></li>
+                        <li><a href="#">租房合同</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>电话：0931-1234567</li>
+                        <li>邮箱：service@honggu.com</li>
+                        <li>地址：甘肃省兰州市红古区平安路88号</li>
+                        <li>工作时间：周一至周日 9:00-18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 红古二手房网 版权所有 | 陇ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的交互逻辑：FAQ手风琴效果
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentNode;
+                parent.classList.toggle('active');
+                
+                const icon = item.querySelector('span');
+                if (parent.classList.contains('active')) {
+                    icon.textContent = '-';
+                } else {
+                    icon.textContent = '+';
+                }
+            });
+        });
+
+        // 简单的搜索框交互
+        const searchBtn = document.querySelector('.search-btn');
+        const searchInput = document.querySelector('.search-input');
+        
+        searchBtn.addEventListener('click', () => {
+            const val = searchInput.value.trim();
+            if(val) {
+                alert('正在搜索：' + val + ' (演示功能)');
+            } else {
+                searchInput.focus();
+            }
+        });
+    </script>
+</body>
+  </html>
