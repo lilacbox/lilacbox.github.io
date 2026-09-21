@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="妖精的尾巴剧场版专题页，提供妖精的尾巴剧场版系列电影介绍、剧情解析、角色分析及观看指南。包含《龙之泪》、《Phoenix Priestess》等作品详细资讯。">
+    <meta name="keywords" content="妖精的尾巴剧场版,妖精的尾巴剧场版列表,妖精的尾巴剧场版在线观看,妖精的尾巴剧场版剧情">
+    <title>妖精的尾巴剧场版-官方剧场版作品与剧情介绍指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --accent-color: #e94560;
+            --text-light: #f0f0f0;
+            --text-gray: #a0a0a0;
+            --card-bg: #16213e;
+            --nav-bg: rgba(26, 26, 46, 0.95);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--nav-bg);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-light);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            background: linear-gradient(to bottom, rgba(26, 26, 46, 0.3), var(--primary-color)), url('https://picsum.photos/seed/fairytail/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ddd;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: #c0354e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0 auto;
+        }
+
+        /* Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .movie-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .card-image {
+            height: 420px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .movie-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #ccc;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-sm {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline-sm {
+            background-color: transparent;
+            border: 1px solid #555;
+            color: #ddd;
+        }
+
+        .btn-outline-sm:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* Info Section */
+        .info-section {
+            background-color: #0f1526;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .info-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .info-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .info-content p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        .info-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: #ccc;
+        }
+
+        .info-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .faq-question:hover {
+            background-color: #1f2b4d;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: #bbb;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px 20px;
+            max-height: 200px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0d0d1a;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #2a2a4a;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--nav-bg);
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-image {
+                height: 300px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">妖精的尾巴<span>剧场版</span></a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#movies">剧场版列表</a></li>
+                    <li><a href="#about">作品介绍</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>妖精的尾巴剧场版 <span>系列</span></h1>
+                <p>见证公会伙伴们的热血冒险与羁绊时刻。从龙之泪到破灭的魔导书，每一部都是不容错过的动画杰作。</p>
+                <div class="hero-btns">
+                    <a href="#movies" class="btn">浏览全部作品</a>
+                    <a href="#about" class="btn btn-outline">了解剧情</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movie List Section -->
+        <section id="movies" class="container">
+            <div class="section-title">
+                <h2>剧场版作品列表</h2>
+                <p>Fairy Tail Movie Series</p>
+            </div>
+            <div class="movie-grid">
+                <!-- Movie 1 -->
+                <article class="movie-card">
+                    <div class="card-image">
+                        <span class="card-badge">2012</span>
+                        <img src="https://picsum.photos/seed/fairytail1/400/600" alt="妖精的尾巴剧场版1 龙之泪">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">龙之泪</h3>
+                        <div class="card-meta">
+                            <span>导演：山本靖贵</span>
+                            <span>评分：9.0</span>
+                        </div>
+                        <p class="card-desc">为了寻找传说中拥有治愈能力的“龙之泪”，纳兹一行人踏上了旅程。然而，他们面对的不仅是强大的敌人，还有关于过去与未来的残酷真相。</p>
+                        <div class="card-actions">
+                            <button class="btn btn-sm">查看详情</button>
+                            <button class="btn btn-sm btn-outline-sm">加入片单</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie 2 -->
+                <article class="movie-card">
+                    <div class="card-image">
+                        <span class="card-badge">2013</span>
+                        <img src="https://picsum.photos/seed/fairytail2/400/600" alt="妖精的尾巴剧场版2 破灭的魔导书">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">破灭的魔导书</h3>
+                        <div class="card-meta">
+                            <span>导演：佐藤顺一</span>
+                            <span>评分：8.8</span>
+                        </div>
+                        <p class="card-desc">妖精的尾巴公会在前往西大陆参加魔术大赛的途中，遭遇了神秘组织“黑暗公会”的袭击。为了保护同伴，露西必须直面自己体内隐藏的黑暗力量。</p>
+                        <div class="card-actions">
+                            <button class="btn btn-sm">查看详情</button>
+                            <button class="btn btn-sm btn-outline-sm">加入片单</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie 3 -->
+                <article class="movie-card">
+                    <div class="card-image">
+                        <span class="card-badge">2014</span>
+                        <img src="https://picsum.photos/seed/fairytail3/400/600" alt="妖精的尾巴剧场版3 魔法少女玛琳">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">魔法少女玛琳</h3>
+                        <div class="card-meta">
+                            <span>导演：佐藤顺一</span>
+                            <span>评分：8.5</span>
+                        </div>
+                        <p class="card-desc">玛琳是一个为了拯救生病的弟弟而四处寻找魔力的魔法少女。为了找到能够拯救弟弟的魔法，她与妖精的尾巴的成员们产生了交集，展开了一场温馨的冒险。</p>
+                        <div class="card-actions">
+                            <button class="btn btn-sm">查看详情</button>
+                            <button class="btn btn-sm btn-outline-sm">加入片单</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie 4 -->
+                <article class="movie-card">
+                    <div class="card-image">
+                        <span class="card-badge">2015</span>
+                        <img src="https://picsum.photos/seed/fairytail4/400/600" alt="妖精的尾巴剧场版4 龙之骄子">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">龙之骄子</h3>
+                        <div class="card-meta">
+                            <span>导演：山本靖贵</span>
+                            <span>评分：8.9</span>
+                        </div>
+                        <p class="card-desc">妖精的尾巴公会遭遇了前所未有的危机，原本应该去训练的杰拉尔却突然失踪。为了拯救杰拉尔和公会，纳兹等人与强大的龙族展开了决战。</p>
+                        <div class="card-actions">
+                            <button class="btn btn-sm">查看详情</button>
+                            <button class="btn btn-sm btn-outline-sm">加入片单</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie 5 -->
+                <article class="movie-card">
+                    <div class="card-image">
+                        <span class="card-badge">2016</span>
+                        <img src="https://picsum.photos/seed/fairytail5/400/600" alt="妖精的尾巴剧场版5 生生不息">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">生生不息</h3>
+                        <div class="card-meta">
+                            <span>导演：山本靖贵</span>
+                            <span>评分：9.1</span>
+                        </div>
+                        <p class="card-desc">在妖精的尾巴公会面临解散的危机时刻，成员们收到了一封神秘的邀请函。为了证明公会的价值，他们必须在一个神秘的世界中完成不可能的任务。</p>
+                        <div class="card-actions">
+                            <button class="btn btn-sm">查看详情</button>
+                            <button class="btn btn-sm btn-outline-sm">加入片单</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie 6 -->
+                <article class="movie-card">
+                    <div class="card-image">
+                        <span class="card-badge">2018</span>
+                        <img src="https://picsum.photos/seed/fairytail6/400/600" alt="妖精的尾巴剧场版6 永久之门">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">永久之门</h3>
+                        <div class="card-meta">
+                            <span>导演：佐藤顺一</span>
+                            <span>评分：8.7</span>
+                        </div>
+                        <p class="card-desc">妖精的尾巴公会被指控为“地狱之门”的幕后黑手。为了洗清冤屈，纳兹等人必须潜入敌营，揭开隐藏在公会历史深处的秘密。</p>
+                        <div class="card-actions">
+                            <button class="btn btn-sm">查看详情</button>
+                            <button class="btn btn-sm btn-outline-sm">加入片单</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="info-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>作品背景与观看指南</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-image">
+                        <img src="https://picsum.photos/seed/fairytailguild/600/400" alt="妖精的尾巴公会">
+                    </div>
+                    <div class="info-content">
+                        <h3>关于妖精的尾巴剧场版</h3>
+                        <p>《妖精的尾巴》剧场版系列是日本东映动画公司推出的《妖精的尾巴》外传动画电影。故事时间线大多设定在原作漫画剧情结束之后，或者作为平行世界的补充，主要围绕纳兹、露西、格雷、哈比等主要角色展开独立冒险。</p>
+                        <p>这些剧场版作品在延续原作热血、友情、羁绊主题的同时，往往包含更宏大的世界观设定和更深刻的情感表达。对于喜爱原作动画的观众来说，剧场版是补充剧情细节、欣赏角色成长的绝佳选择。</p>
+                        <h4 style="margin-top:20px; margin-bottom:10px; color:var(--accent-color);">推荐观看顺序</h4>
+                        <ul class="info-list">
+                            <li>1. 龙之泪（2012）- 入门首选，剧情独立完整。</li>
+                            <li>2. 破灭的魔导书（2013）- 露西视角，强调亲情。</li>
+                            <li>3. 龙之骄子（2014）- 杰拉尔特别篇。</li>
+                            <li>4. 生生不息（2015）- 公会解散危机篇。</li>
+                            <li>5. 永久之门（2018）- 官方最终章，结局圆满。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="container">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>剧场版是否需要看过正片动画才能看懂？</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>大部分剧场版剧情独立，不需要观看正片也能完全看懂。但了解主要角色的性格和关系能让你获得更好的观影体验。例如《龙之泪》和《破灭的魔导书》对角色关系有较多铺垫。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>哪一部剧场版评分最高？</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>根据观众反馈和评分网站数据，《生生不息》和《龙之泪》通常被认为是评分最高的两部作品，分别探讨了公会解散的危机和龙的起源之谜。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>剧场版剧情与漫画/动画正片冲突吗？</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>剧场版大多设定在正片完结之后或平行世界，因此不会与漫画或动画正片剧情产生冲突。观看时可以将其视为正片故事的延伸或番外篇。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">版权声明</a>
+                <a href="#">友情链接</a>
+                <a href="#">联系站长</a>
+            </div>
+            <p class="copyright">© 2023 妖精的尾巴剧场版专题站. All Rights Reserved. 本站为粉丝交流与资讯展示平台，非官方网站。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            const navList = document.getElementById('nav-list');
+            navList.classList.toggle('show');
+        }
+
+        // Toggle FAQ Accordion
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all other items
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('nav-list').classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
