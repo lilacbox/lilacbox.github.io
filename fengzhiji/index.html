@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="风之迹 - 探索自然界的风现象与气候奥秘，提供气象科普、风力发电技术、户外风况预报及环保知识。">
+    <meta name="keywords" content="风之迹, 风力发电, 气象科普, 风力预报, 环保能源, 风力涡轮机">
+    <title>风之迹 - 自然风现象与清洁能源科普平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c5f2d;
+            --secondary-color: #97bc62;
+            --accent-color: #e8d5b5;
+            --text-dark: #1a2e1a;
+            --text-light: #4a5d4a;
+            --bg-light: #f7f9f7;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: var(--secondary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .cta-btn:hover {
+            background-color: #1e421f;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4a7c43 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Feature Cards */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 12px;
+            color: var(--secondary-color);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .card-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-link {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .card-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 40px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            gap: 20px;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Wind Science Section */
+        .science-section {
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .science-item {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .science-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .science-img {
+            flex: 1;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .science-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .science-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .science-content {
+            flex: 1;
+        }
+
+        .science-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .science-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-light);
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 20px;
+            max-height: 200px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .science-item, .science-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo"><span>风</span>之迹</a>
+            <nav>
+                <ul>
+                    <li><a href="#phenomena">风之现象</a></li>
+                    <li><a href="#energy">清洁能源</a></li>
+                    <li><a href="#science">科学原理</a></li>
+                    <li><a href="#forecast">风况预报</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">加入探索计划</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>捕捉风的轨迹，洞察自然的呼吸</h1>
+                <p>从微观的空气流动到宏观的气候变迁，探索风之迹，了解风力发电技术，掌握气象预报知识。</p>
+                <a href="#energy" class="cta-btn" style="background: white; color: var(--primary-color);">探索风力发电</a>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h3>360°</h3>
+                    <p>全方位监测</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>合作风力场</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50%</h3>
+                    <p>清洁能源占比</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24h</h3>
+                    <p>实时数据更新</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/wind1/400/250" alt="风力发电场" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">能源科技</span>
+                            <h3 class="card-title">风力发电：清洁能源的未来</h3>
+                            <p class="card-text">深入了解风力涡轮机如何将风能转化为电能，以及现代海上风电场的技术突破。</p>
+                            <a href="#" class="card-link">阅读全文</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/wind2/400/250" alt="气象监测" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">气象科普</span>
+                            <h3 class="card-title">如何读懂风向与风速图</h3>
+                            <p class="card-text">掌握气象台发布的天气图，学会识别风向标和风速仪，解读大气流动的秘密。</p>
+                            <a href="#" class="card-link">学习指南</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Science Deep Dive -->
+        <section class="section science-section" id="science">
+            <div class="container">
+                <div class="section-header">
+                    <h2>风之科学原理</h2>
+                    <p>风不仅仅是空气的流动，更是地球能量循环的重要组成部分。</p>
+                </div>
+
+                <div class="science-item">
+                    <div class="science-img">
+                        <img src="https://picsum.photos/seed/windmill/600/400" alt="风力涡轮机原理">
+                    </div>
+                    <div class="science-content">
+                        <h3>能量转换机制</h3>
+                        <p>当风吹过风力涡轮机叶片时，叶片的形状（伯努利原理）迫使空气在叶片上方加速流动，产生低压区。这种压力差产生升力，推动叶片旋转。旋转的轴带动发电机内的转子切割磁感线，从而产生感应电流。</p>
+                        <p>效率是风力发电的关键指标。现代大型风力发电机在最佳风速下的转换效率已接近理论极限。</p>
+                    </div>
+                </div>
+
+                <div class="science-item">
+                    <div class="science-img">
+                        <img src="https://picsum.photos/seed/windmap/600/400" alt="全球风带">
+                    </div>
+                    <div class="science-content">
+                        <h3>全球风带与气候</h3>
+                        <p>地球自转和太阳辐射的不均匀加热导致了全球性的风带系统。从赤道到两极，信风带、西风带和极地东风带构成了复杂的气候格局。理解这些风带对于预测季节性气候变化和寻找最佳的风电场选址至关重要。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>探索栏目</h2>
+                </div>
+                <div class="grid grid-3">
+                    <div class="card" style="text-align: center;">
+                        <div class="card-body">
+                            <div style="font-size: 40px; margin-bottom: 15px;">🛰️</div>
+                            <h3 class="card-title">卫星遥感</h3>
+                            <p class="card-text">利用卫星数据追踪台风路径与全球风场分布。</p>
+                        </div>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <div class="card-body">
+                            <div style="font-size: 40px; margin-bottom: 15px;">🔋</div>
+                            <h3 class="card-title">储能技术</h3>
+                            <p class="card-text">解决风能间歇性问题，探索电池与抽水蓄能方案。</p>
+                        </div>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <div style="font-size: 40px; margin-bottom: 15px;">🚜</div>
+                        <h3 class="card-title">农业风能</h3>
+                        <p class="card-text">低风速区域的风力利用与农光互补模式。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section faq-section" id="phenomena">
+            <div class="container" style="max-width: 800px;">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">风能是可再生能源吗？</div>
+                    <div class="faq-answer">
+                        <p>是的，风能是典型的可再生能源。只要太阳辐射不停止，地球上的风就会不断产生。与煤炭或石油不同，风不会枯竭，且在发电过程中不产生温室气体。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">为什么有些地方的风力发电场看起来“停了”？</div>
+                    <div class="faq-answer">
+                        <p>实际上它们并没有停。当风速低于切入风速（通常约3-4米/秒）时，为了保护设备和节省能源，叶片会顺桨停止转动。当风速达到额定风速时，它们会自动重新启动并全速运转。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">风力发电对环境有影响吗？</div>
+                    <div class="faq-answer">
+                        <p>虽然风能是清洁的，但风电场可能影响鸟类迁徙路径和局部微气候。通过科学的选址规划和噪音控制技术，这些负面影响正在被不断降低。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section" style="background: var(--primary-color); color: white; text-align: center;">
+            <div class="container">
+                <h2 style="margin-bottom: 20px;">关注风之迹，共建绿色未来</h2>
+                <p style="margin-bottom: 30px; opacity: 0.9;">获取最新的气象资讯与能源动态，支持可持续发展。</p>
+                <a href="#" class="cta-btn" style="background: white; color: var(--primary-color);">订阅我们的周报</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 20px; display: inline-block;"><span>风</span>之迹</a>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        风之迹致力于科普气象知识，推广清洁能源技术。我们相信通过科学的认知与实践，可以为地球创造更可持续的未来。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索栏目</h4>
+                    <ul>
+                        <li><a href="#">气象观测</a></li>
+                        <li><a href="#">风力发电</a></li>
+                        <li><a href="#">环保政策</a></li>
+                        <li><a href="#">户外探险</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源下载</h4>
+                    <ul>
+                        <li><a href="#">气象图例手册</a></li>
+                        <li><a href="#">风电选址指南</a></li>
+                        <li><a href="#">环保数据报告</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>邮箱：contact@wind-trail.com</li>
+                        <li>电话：400-123-4567</li>
+                        <li>地址：绿色能源科技园A座</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 风之迹科普平台 版权所有 | 仅供演示使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
