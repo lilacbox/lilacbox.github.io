@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火孤-独行者与烈焰的终极对决</title>
+    <meta name="description" content="火孤是一个以角色扮演、策略战斗和沉浸式剧情为核心的冒险游戏平台。探索火孤的世界，体验极致的战斗快感与角色成长系统。">
+    <meta name="keywords" content="火孤,火孤游戏,火孤攻略,火孤下载,角色扮演,ARPG">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f1faee;
+            --text-color: #333333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #c92a37;
+            border-color: #c92a37;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--secondary-color);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(29, 53, 87, 0.9), rgba(230, 57, 70, 0.8)), url('https://picsum.photos/seed/firehero/1920/1080.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: #666;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            background-color: var(--bg-color);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        /* Gameplay Section */
+        .gameplay {
+            padding: 4rem 0;
+        }
+
+        .gameplay-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .gameplay-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .gameplay-content h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .gameplay-content p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .stat-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        .stat-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        /* Latest News */
+        .news {
+            padding: 4rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .news-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .news-card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #555;
+            display: none;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            opacity: 0.7;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                margin: 1rem 0;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .gameplay-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-color);"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+                火孤<span>GAME</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#features">游戏特色</a></li>
+                    <li><a href="#gameplay">玩法介绍</a></li>
+                    <li><a href="#news">最新资讯</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">立即下载</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>燃烧灵魂，征服烈焰</h1>
+                <p>在《火孤》的史诗世界中，作为一名孤独的火行者，你将面对无尽的怪物与深渊。利用独特的元素操控能力，揭开古老文明的秘密。</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">免费开始冒险</a>
+                    <a href="#" class="btn btn-outline" style="border-color: white; color: white;">观看宣传片</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心游戏特色</h2>
+                    <p>为什么数百万玩家选择《火孤》</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🔥</div>
+                        <h3>元素操控</h3>
+                        <p>掌握火焰、寒冰与雷电的力量，构建属于你的战斗流派，体验极致的元素连招。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">⚔️</div>
+                        <h3>硬核战斗</h3>
+                        <p>摒弃自动战斗，采用即时制战斗系统。精准的闪避、连击和技能释放是生存的关键。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3>开放世界</h3>
+                        <p>探索广袤的幻想大陆，从炎热的火山口到冰封的荒原，每一个角落都隐藏着秘密。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gameplay Section -->
+        <section id="gameplay" class="gameplay">
+            <div class="container">
+                <div class="gameplay-layout">
+                    <div class="gameplay-content">
+                        <h2>独特的“火孤”职业体系</h2>
+                        <p>在《火孤》中，玩家将扮演被火焰诅咒的“火孤”职业。这并非单纯的法师，而是一种能够通过燃烧自身生命值来换取强大爆发力的危险职业。你需要时刻在生存与输出之间找到完美的平衡点。</p>
+                        <p>游戏中的装备系统基于“元素亲和度”，不同的武器会赋予你不同的火焰形态，从灼热的烈焰剑到毁灭性的陨石术，随心所欲地改变战场局势。</p>
+                        <div class="stat-list">
+                            <div class="stat-item"><span class="stat-dot"></span> 自由加点系统</div>
+                            <div class="stat-item"><span class="stat-dot"></span> 深度装备打造</div>
+                            <div class="stat-item"><span class="stat-dot"></span> 动态天气影响</div>
+                            <div class="stat-item"><span class="stat-dot"></span> PVP竞技场</div>
+                        </div>
+                    </div>
+                    <div class="gameplay-image">
+                        <img src="https://picsum.photos/seed/firefighter/800/600.jpg" alt="火孤游戏战斗场景">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news">
+            <div class="container">
+                <div class="section-header">
+                    <h2>最新动态</h2>
+                    <p>了解《火孤》的最新更新与社区资讯</p>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <img src="https://picsum.photos/seed/update1/400/250.jpg" alt="版本更新">
+                        <div class="news-content">
+                            <div class="news-date">2023-10-15</div>
+                            <h3>2.0版本“深渊裂隙”现已上线</h3>
+                            <p>全新的大型副本开启，挑战更高难度的BOSS，获取传说级装备。</p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="https://picsum.photos/seed/update2/400/250.jpg" alt="职业平衡">
+                        <div class="news-content">
+                            <div class="news-date">2023-10-10</div>
+                            <h3>职业平衡性调整公告</h3>
+                            <p>针对“火孤”职业进行了技能伤害与冷却时间的优化，提升操作手感。</p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="https://picsum.photos/seed/event/400/250.jpg" alt="限时活动">
+                        <div class="news-content">
+                            <div class="news-date">2023-10-05</div>
+                            <h3>万圣节特别活动“幽灵火影”</h3>
+                            <p>参与限时活动，完成收集任务，赢取限定皮肤与稀有道具。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">《火孤》支持哪些平台？</div>
+                        <div class="faq-answer">《火孤》目前支持 Windows PC、macOS 以及主流移动设备。跨平台账号互通功能正在开发中，敬请期待。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">游戏是否免费？</div>
+                        <div class="faq-answer">是的，《火孤》是一款免费游玩的游戏。游戏内设有商城，玩家可以通过充值购买外观道具，不影响游戏平衡。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">新手如何快速上手？</div>
+                        <div class="faq-answer">建议新手玩家先完成新手引导任务，熟悉“火孤”职业的技能机制。加入一个活跃的公会可以让你更快地获取资源和指导。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">游戏对电脑配置有什么要求？</div>
+                        <div class="faq-answer">最低配置需要 Intel Core i5 或同等处理器，8GB 内存，GTX 660 级别显卡。推荐配置建议使用 i7 处理器，16GB 内存及 GTX 1060 以上显卡。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>火孤GAME</h3>
+                    <p>致力于为玩家提供最纯粹的ARPG体验。在这里，每一次点击都是对命运的挑战。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏中心</h4>
+                    <ul>
+                        <li><a href="#">下载客户端</a></li>
+                        <li><a href="#">注册账号</a></li>
+                        <li><a href="#">版本说明</a></li>
+                        <li><a href="#">修复日志</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul>
+                        <li><a href="#">玩家论坛</a></li>
+                        <li><a href="#">客服中心</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">Discord社区</a></li>
+                        <li><a href="#">Bilibili频道</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 火孤游戏工作室 版权所有. 本网站为演示页面，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ手风琴效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
