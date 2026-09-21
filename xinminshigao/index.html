@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新民市高级中学-校园概况、招生信息与教学成果展示</title>
+    <meta name="description" content="新民市高级中学官方网站，提供学校概况、办学特色、师资力量、招生政策、校园新闻及教学成果展示，致力于打造优质高中教育平台。">
+    <meta name="keywords" content="新民市高级中学, 新民高中, 辽宁高中, 沈阳高中, 招生简章, 校园新闻">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --primary-dark: #004494;
+            --accent-color: #f0ad4e;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            font-size: 0.85rem;
+            padding: 8px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-info span {
+            margin-right: 20px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            margin-left: 5px;
+            font-size: 1.2rem;
+            font-weight: normal;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 10px 0;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 500px;
+            background: linear-gradient(rgba(0, 86, 179, 0.85), rgba(0, 68, 148, 0.85)), url('https://picsum.photos/seed/school_building/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #e0982e;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--bg-light);
+            padding: 40px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* News Section */
+        .news-section {
+            background-color: var(--white);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .news-main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+
+        .news-item:hover {
+            background-color: var(--bg-light);
+        }
+
+        .news-date {
+            background-color: var(--bg-light);
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .news-date .day {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .news-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .news-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .news-sidebar {
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        .news-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 8px;
+        }
+
+        .news-list a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .news-list a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Ad Space */
+        .ad-banner {
+            width: 100%;
+            height: 100px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-about p {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info li::before {
+            content: '•';
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .features-grid, .news-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .nav-container { padding: 0 20px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; height: auto; padding: 15px 0; }
+            nav ul { flex-direction: column; gap: 15px; text-align: center; }
+            .top-bar { display: none; }
+            .hero { height: 400px; }
+            .hero-content h1 { font-size: 1.8rem; }
+            .btn-outline { margin-left: 0; margin-top: 10px; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-info">
+                <span>欢迎访问新民市高级中学官方网站</span>
+            </div>
+            <div class="top-links">
+                <a href="#">校长信箱</a>
+                <a href="#">在线留言</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                新民市高级中学
+                <span>XMZG</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">学校概况</a></li>
+                    <li><a href="#">师资队伍</a></li>
+                    <li><a href="#">教育教学</a></li>
+                    <li><a href="#">招生信息</a></li>
+                    <li><a href="#">校园文化</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>育人为本，追求卓越</h1>
+            <p>新民市高级中学是辽宁省重点高中，致力于培养德智体美劳全面发展的社会主义建设者和接班人。</p>
+            <div>
+                <a href="#" class="btn">了解学校</a>
+                <a href="#" class="btn btn-outline">招生专栏</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>60+</h3>
+                    <p>建校历史（年）</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3000+</h3>
+                    <p>在校学生</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>高级教师</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>本科上线率</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>办学特色</h2>
+                <p>坚持多元化发展，构建高质量育人体系</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>科学管理</h3>
+                    <p>实行半军事化管理与人性化关怀相结合，营造严谨有序的校园环境。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>精品课程</h3>
+                    <p>推行分层教学与选课走班模式，满足不同潜质学生的发展需求。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>竞赛培优</h3>
+                    <p>组建奥赛辅导团队，在数学、物理、化学等学科竞赛中屡获佳绩。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="section news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>校园动态</h2>
+                <p>关注新民高中最新消息</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-main">
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">15</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">我校举行2024年秋季运动会开幕式</a></h3>
+                            <p>10月15日，新民市高级中学2024年秋季运动会在校田径场隆重举行。全校师生齐聚一堂，展现了新时代高中生的精神风貌...</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">08</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">专家引领促成长，名师讲座进校园</a></h3>
+                            <p>为提升我校教师教育教学水平，特邀省特级教师张教授来校开展专题讲座，全校青年教师积极参与，现场气氛热烈...</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">02</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">我校在沈阳市中学生篮球赛中获亚军</a></h3>
+                            <p>在刚刚结束的沈阳市中学生篮球联赛中，我校男子篮球队敢打敢拼，一路过关斩将，最终获得亚军的好成绩...</p>
+                        </div>
+                    </article>
+                </div>
+                <aside class="news-sidebar">
+                    <h3 class="sidebar-title">热门专题</h3>
+                    <ul class="news-list">
+                        <li><a href="#">2024年招生简章</a></li>
+                        <li><a href="#">校园安全教育活动</a></li>
+                        <li><a href="#">高考百日誓师大会</a></li>
+                        <li><a href="#">食堂开放日</a></li>
+                        <li><a href="#">家长委员会会议</a></li>
+                    </ul>
+                    <div class="ad-banner" style="margin-top: 20px; height: 120px;">
+                        招生咨询二维码
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h4>新民市高级中学</h4>
+                    <p>新民市高级中学位于辽宁省沈阳市新民市，是一所有着深厚文化底蕴和优良办学传统的现代化省级示范性普通高中。</p>
+                    <p>学校坚持“为学生的终身发展奠基”的办学理念，形成了“勤奋、严谨、求实、创新”的优良校风。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">学校简介</a></li>
+                        <li><a href="#">组织机构</a></li>
+                        <li><a href="#">规章制度</a></li>
+                        <li><a href="#">党建园地</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>教育教学</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">课程改革</a></li>
+                        <li><a href="#">教研动态</a></li>
+                        <li><a href="#">学生社团</a></li>
+                        <li><a href="#">心理健康</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul class="contact-info">
+                        <li>地址：辽宁省沈阳市新民市文化路88号</li>
+                        <li>电话：024-8755xxxx</li>
+                        <li>邮箱：xinzxx@163.com</li>
+                        <li>邮编：110300</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 新民市高级中学 版权所有 | 辽ICP备xxxxxxxx号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
