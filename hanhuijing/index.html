@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩慧景-知名导演、编剧与影视制作人个人资料</title>
+    <meta name="description" content="韩慧景个人主页，收录其导演、编剧作品，影视从业经历，专业成就介绍及行业评价。">
+    <meta name="keywords" content="韩慧景, 导演, 编剧, 影视制作人, 影评, 作品集">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #c0392b;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            padding: 4rem 0;
+            background-color: var(--bg-color);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: center;
+            position: sticky;
+            top: 100px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 4px solid var(--border-color);
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stat-item h4 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .profile-bio h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .profile-bio p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        /* Works Section */
+        .works-section {
+            padding: 4rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .work-poster {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .work-info {
+            padding: 1.5rem;
+        }
+
+        .work-year {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .work-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .work-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .work-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .work-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: transform 0.2s;
+        }
+
+        .work-card:hover .work-link::after {
+            transform: translateX(5px);
+        }
+
+        /* Awards Section */
+        .awards-section {
+            padding: 4rem 0;
+            background-color: var(--bg-color);
+        }
+
+        .awards-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .award-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #f39c12;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .award-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .award-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .award-year {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .award-org {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ccc;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            .profile-card {
+                position: static;
+                margin-bottom: 2rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">韩慧景<span>Works</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">主页</a></li>
+                    <li><a href="#works">代表作品</a></li>
+                    <li><a href="#awards">荣誉奖项</a></li>
+                    <li><a href="#about">关于</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>韩慧景</h1>
+                <p>资深电影导演、编剧及制片人。专注于现实主义题材叙事，致力于通过影像语言探索社会议题与人性深度。</p>
+                <div class="hero-tags">
+                    <span class="tag">第XX届金马奖最佳导演提名</span>
+                    <span class="tag">柏林电影节参展作品</span>
+                    <span class="tag">独立电影先锋派</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="about" class="profile-section">
+            <div class="container">
+                <div class="profile-grid">
+                    <aside class="profile-card">
+                        <img src="https://picsum.photos/seed/hanhuijing/300/300" alt="韩慧景照片" class="profile-img">
+                        <h2 class="profile-name">韩慧景</h2>
+                        <p class="profile-title">导演 / 编剧 / 制片人</p>
+                        
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <h4>12</h4>
+                                <p>导演作品</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>5</h4>
+                                <p>编剧作品</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>8</h4>
+                                <p>国际参展</p>
+                            </div>
+                        </div>
+
+                        <div class="profile-social">
+                            <a href="#" style="color:#333; font-size:0.9rem;">微博主页 &nearr;</a>
+                        </div>
+                    </aside>
+
+                    <article class="profile-bio">
+                        <h3>从业经历与理念</h3>
+                        <p>韩慧景毕业于北京电影学院导演系，早年以独立纪录片起步，后转型剧情长片创作。其作品风格以冷峻的写实主义著称，擅长在平凡的故事中挖掘不平凡的情感张力。韩慧景认为电影不应只是娱乐的消遣，更应是观察社会的一扇窗口。</p>
+                        <p>从业十余年来，他坚持执导具有人文关怀的作品，关注边缘群体与时代变迁下的个体命运。他的电影语言克制而富有诗意，常常通过长镜头和自然光效来营造沉浸式的观影体验。</p>
+                        <h3>代表风格</h3>
+                        <ul>
+                            <li>现实主义叙事风格</li>
+                            <li>长镜头美学运用</li>
+                            <li>低饱和度视觉调色</li>
+                            <li>复杂的人物关系构建</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="works-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>代表作品</h2>
+                    <p>精选韩慧景导演最具影响力的电影及纪录片作品</p>
+                </div>
+                <div class="works-grid">
+                    <!-- Work 1 -->
+                    <article class="work-card">
+                        <img src="https://picsum.photos/seed/movie1/400/600" alt="作品封面" class="work-poster">
+                        <div class="work-info">
+                            <span class="work-year">2023</span>
+                            <h3 class="work-title">《静默的河流》</h3>
+                            <p class="work-desc">一部关于城市边缘小人物生存状态的剧情长片，讲述了在工业废墟旁挣扎求生的三代人的故事。</p>
+                            <a href="#" class="work-link">查看详情</a>
+                        </div>
+                    </article>
+                    <!-- Work 2 -->
+                    <article class="work-card">
+                        <img src="https://picsum.photos/seed/movie2/400/600" alt="作品封面" class="work-poster">
+                        <div class="work-info">
+                            <span class="work-year">2020</span>
+                            <h3 class="work-title">《回声》</h3>
+                            <p class="work-desc">一部获得多项国际大奖的纪录片，记录了老一辈手艺人在现代化进程中的坚守与失落。</p>
+                            <a href="#" class="work-link">查看详情</a>
+                        </div>
+                    </article>
+                    <!-- Work 3 -->
+                    <article class="work-card">
+                        <img src="https://picsum.photos/seed/movie3/400/600" alt="作品封面" class="work-poster">
+                        <div class="work-info">
+                            <span class="work-year">2018</span>
+                            <h3 class="work-title">《夜行列车》</h3>
+                            <p class="work-desc">悬疑剧情片，以一列行驶在荒漠中的列车为舞台，展开了一场关于背叛与救赎的心理博弈。</p>
+                            <a href="#" class="work-link">查看详情</a>
+                        </div>
+                    </article>
+                    <!-- Work 4 -->
+                    <article class="work-card">
+                        <img src="https://picsum.photos/seed/movie4/400/600" alt="作品封面" class="work-poster">
+                        <div class="work-info">
+                            <span class="work-year">2015</span>
+                            <h3 class="work-title">《城西往事》</h3>
+                            <p class="work-desc">早期成名作，展现了改革开放初期城市建设的宏大叙事与个体命运的微小起伏。</p>
+                            <a href="#" class="work-link">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section id="awards" class="awards-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>荣誉奖项</h2>
+                    <p>韩慧景导演近年来获得的行业认可</p>
+                </div>
+                <div class="awards-list">
+                    <div class="award-item">
+                        <div class="award-header">
+                            <span class="award-title">最佳导演奖</span>
+                            <span class="award-year">2023</span>
+                        </div>
+                        <div class="award-org">第40届香港电影金像奖</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-header">
+                            <span class="award-title">评审团大奖</span>
+                            <span class="award-year">2021</span>
+                        </div>
+                        <div class="award-org">第71届柏林国际电影节</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-header">
+                            <span class="award-title">最佳编剧奖</span>
+                            <span class="award-year">2019</span>
+                        </div>
+                        <div class="award-org">第56届台湾金马奖</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-header">
+                            <span class="award-title">年度新锐导演</span>
+                            <span class="award-year">2016</span>
+                        </div>
+                        <div class="award-org">中国导演协会</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于韩慧景</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">致力于探索影像艺术的边界，用镜头记录时代的脉搏。这里提供最权威的个人资料、作品列表及行业资讯。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#about">个人简介</a></li>
+                        <li><a href="#works">作品集</a></li>
+                        <li><a href="#awards">获奖记录</a></li>
+                        <li><a href="#">媒体报道</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系合作</h4>
+                    <ul>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">媒体采访</a></li>
+                        <li><a href="#">电影节联系</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 韩慧景个人工作室版权所有 | 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
