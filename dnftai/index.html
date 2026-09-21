@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNF台服 - 韩国地下城与勇士官方资料站与攻略指南</title>
+    <meta name="description" content="DNF台服（韩国地下城与勇士）官方资料站，提供最新韩服版本更新资讯、职业平衡调整、副本攻略、装备搭配指南及玩家社区讨论。">
+    <meta name="keywords" content="DNF台服, 韩服DNF, DNF韩国, 地下城与勇士韩服, DNF攻略, DNF装备">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4b69ff;
+            --secondary-color: #6c5ce7;
+            --accent-color: #00cec9;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --bg-light: #f5f6fa;
+            --bg-white: #ffffff;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .header-actions button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/dnf/1600/900') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(75, 105, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--text-dark);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e1e1e1;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+            margin-top: 5px;
+        }
+
+        .section-link {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .info-card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--primary-color);
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .info-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: var(--bg-white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 60px;
+        }
+
+        .guide-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .guide-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 200px;
+            group: hover;
+        }
+
+        .guide-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .guide-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .guide-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: white;
+        }
+
+        .guide-overlay h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .guide-overlay span {
+            font-size: 0.8rem;
+            background: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* Version Info */
+        .version-box {
+            background: linear-gradient(135deg, #2d3436, #636e72);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .version-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .version-badge {
+            background: var(--accent-color);
+            color: #2d3436;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: var(--bg-white);
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #fafafa;
+            padding: 0 20px;
+        }
+
+        .faq-answer p {
+            padding: 20px 0;
+            color: var(--text-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3436;
+            color: #b2bec3;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                font-size: 0.9rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .version-box {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>DNF</span>台服
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#news">最新资讯</a></li>
+                    <li><a href="#guide">副本攻略</a></li>
+                    <li><a href="#equipment">装备搭配</a></li>
+                    <li><a href="#community">玩家社区</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button>进入游戏</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>地下城与勇士：韩服最新动态</h1>
+            <p>探索最新版本的深渊副本、职业平衡调整及史诗装备获取指南。第一时间获取DNF台服官方资讯。</p>
+            <div class="hero-buttons">
+                <a href="#guide" class="btn btn-primary">查看副本攻略</a>
+                <a href="#equipment" class="btn btn-outline">装备搭配推荐</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <!-- Info Grid -->
+        <section class="info-grid">
+            <article class="info-card">
+                <div class="info-icon">📊</div>
+                <h3>版本更新日志</h3>
+                <p>定期查看DNF台服最新的版本更新内容，了解新副本开放时间、职业平衡性调整详情以及活动公告。</p>
+            </article>
+            <article class="info-card">
+                <div class="info-icon">⚔️</div>
+                <h3>深渊与团本</h3>
+                <p>针对最新团本机制的详细解析，包括输出手法、辅助位配合以及BOSS技能应对策略。</p>
+            </article>
+            <article class="info-card">
+                <div class="info-icon">🏆</div>
+                <h3>装备搭配指南</h3>
+                <p>提供当前版本毕业装备列表、附魔推荐以及徽章镶嵌建议，助你快速提升战斗力。</p>
+            </article>
+        </section>
+
+        <!-- Current Version Banner -->
+        <div class="version-box">
+            <div class="version-info">
+                <span class="version-badge">当前版本：第15季</span>
+                <h3>深渊回廊与机械崛起</h3>
+                <p>更新时间：2023年12月</p>
+            </div>
+            <div style="text-align: right;">
+                <p style="margin-bottom: 5px; font-size: 0.9rem;">预计下个版本预告</p>
+                <p style="font-weight: bold;">巴卡尔团本 2.0</p>
+            </div>
+        </div>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-section">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>热门副本攻略</h2>
+                    <p>针对DNF台服当前热门副本的通关技巧与机制解析</p>
+                </div>
+                <a href="#" class="section-link">查看更多攻略 &rarr;</a>
+            </div>
+            <div class="guide-list">
+                <div class="guide-item">
+                    <img src="https://picsum.photos/seed/dnf1/400/300" alt="巴卡尔攻坚战">
+                    <div class="guide-overlay">
+                        <h4>巴卡尔攻坚战</h4>
+                        <span>团本攻略</span>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <img src="https://picsum.photos/seed/dnf2/400/300" alt="幽暗岛">
+                    <div class="guide-overlay">
+                        <h4>幽暗岛</h4>
+                        <span>深渊副本</span>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <img src="https://picsum.photos/seed/dnf3/400/300" alt="希洛克攻坚战">
+                    <div class="guide-overlay">
+                        <h4>希洛克攻坚战</h4>
+                        <span>进阶副本</span>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <img src="https://picsum.photos/seed/dnf4/400/300" alt="奥兹玛攻坚战">
+                    <div class="guide-overlay">
+                        <h4>奥兹玛攻坚战</h4>
+                        <span>高难副本</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipment Section -->
+        <section id="equipment" class="guide-section">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>热门职业推荐</h2>
+                    <p>基于韩服数据统计，当前版本T0级别职业分析</p>
+                </div>
+                <a href="#" class="section-link">查看完整榜单 &rarr;</a>
+            </div>
+            <div class="guide-list">
+                <div class="guide-item">
+                    <img src="https://picsum.photos/seed/dnf5/400/300" alt="剑魂">
+                    <div class="guide-overlay">
+                        <h4>剑魂</h4>
+                        <span>物理系</span>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <img src="https://picsum.photos/seed/dnf6/400/300" alt="元素师">
+                    <div class="guide-overlay">
+                        <h4>元素师</h4>
+                        <span>魔法系</span>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <img src="https://picsum.photos/seed/dnf7/400/300" alt="男街霸">
+                    <div class="guide-overlay">
+                        <h4>男街霸</h4>
+                        <span>控制系</span>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <img src="https://picsum.photos/seed/dnf8/400/300" alt="帕拉丁">
+                    <div class="guide-overlay">
+                        <h4>帕拉丁</h4>
+                        <span>辅助系</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于DNF台服下载、账号安全及游戏机制的疑问</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">DNF台服如何下载安装？</div>
+                <div class="faq-answer">
+                    <p>请前往官方合作渠道下载Nexon Launcher启动器，注册韩国账号后即可进行游戏。注意区分国服与台服的账号体系。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">台服和国服数据互通吗？</div>
+                <div class="faq-answer">
+                    <p>不互通。DNF台服（韩国服务器）拥有独立的游戏数据、更新进度和货币系统，请勿使用国服账号登录台服。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">韩服金币获取难度如何？</div>
+                <div class="faq-answer">
+                    <p>韩服金币主要通过深渊副本掉落、团本奖励以及日常任务获取。由于物价波动，建议关注官方拍卖行行情。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何保证账号安全？</div>
+                <div class="faq-answer">
+                    <p>请勿相信任何非官方的“代练”、“代充”服务，妥善保管账号密码，开启二次验证，警惕钓鱼网站。</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <p style="font-size: 0.9rem; line-height: 1.8;">
+                    本站为玩家社区性质的信息聚合平台，致力于为DNF台服玩家提供最及时、最准确的攻略与资讯服务。所有游戏版权归Nexon及Neople所有。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">最新资讯</a></li>
+                    <li><a href="#">职业图鉴</a></li>
+                    <li><a href="#">装备图鉴</a></li>
+                    <li><a href="#">视频攻略</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>游戏资源</h4>
+                <ul>
+                    <li><a href="#">客户端下载</a></li>
+                    <li><a href="#">活动日历</a></li>
+                    <li><a href="#">职业平衡表</a></li>
+                    <li><a href="#">玩家论坛</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>邮箱：support@dnf-taiwan.com</li>
+                    <li>QQ群：123456789</li>
+                    <li>工作时间：9:00 - 22:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 DNF台服攻略网. All Rights Reserved. 非官方网站，仅供玩家交流学习使用。</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                        }
+                    });
+
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    } else {
+                        answer.style.maxHeight = null;
+                    }
+                });
+            });
+
+            // Smooth Scroll for Navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
